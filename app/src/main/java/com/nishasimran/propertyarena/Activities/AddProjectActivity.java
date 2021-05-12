@@ -44,10 +44,10 @@ public class AddProjectActivity extends AppCompatActivity {
 
     // values
     private String projectName, developerName, launchType, zone, status, paymentPlan, scheme, sector, specs;
-    private float rate = 0.0f, carpet = 0.0f, landParcel = 0.0f;
+    private float rate = 0.0f, landParcel = 0.0f;
     private final ArrayList<String> config = new ArrayList<>();
     private long possessionDate = 0L;
-    private int towers = 0, units = 0;
+    private int towers = 0, carpet = 0, units = 0;
 
     private final ArrayList<ConfigView> configViews = new ArrayList<>();
 
@@ -115,7 +115,7 @@ public class AddProjectActivity extends AppCompatActivity {
                 developerName = developerNameEditText.getText().toString().trim();
                 zone = zoneEditText.getText().toString().trim();
                 rate = Float.parseFloat(rateEditText.getText().toString().trim());
-                carpet = Float.parseFloat(carpetEditText.getText().toString().trim());
+                carpet = Integer.parseInt(carpetEditText.getText().toString().trim());
                 paymentPlan = paymentPlanEditText.getText().toString().trim();
                 scheme = schemeEditText.getText().toString().trim();
                 landParcel = Float.parseFloat(landParcelEditText.getText().toString().trim());

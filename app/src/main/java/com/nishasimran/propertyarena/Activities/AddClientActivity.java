@@ -3,6 +3,7 @@ package com.nishasimran.propertyarena.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -114,8 +115,6 @@ public class AddClientActivity extends AppCompatActivity {
                 ClientViewModel.getInstance(AddClientActivity.this, getApplication()).insert(client);
 
                 finish();
-            } else {
-                Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -123,31 +122,46 @@ public class AddClientActivity extends AppCompatActivity {
     private boolean validateViews() {
         if (isEditTextEmpty(nameEditText)) {
             nameEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(resAddressEditText)) {
             resAddressEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(offAddressEditText)) {
             offAddressEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         employmentTextView.setError(null);
         if (employment == null || employment.equals(Values.EMPLOYMENT_OPTIONS[0]) || employment.trim().isEmpty()) {
             employmentTextView.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(phoneEditText)) {
             phoneEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (phoneEditText.getText().toString().trim().length() != 10) {
+            phoneEditText.setError(Values.ERROR_PHONE);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_INVALID_PHONE, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(emailEditText)) {
             emailEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(emailEditText.getText().toString().trim()).matches()) {
+            emailEditText.setError(Values.ERROR_EMAIL);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_INVALID_EMAIL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(reqLocalityEditText)) {
             reqLocalityEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         for (int i = 0; i < reqConfigContainer.getChildCount(); i++) {
@@ -164,19 +178,23 @@ public class AddClientActivity extends AppCompatActivity {
         }
         if (reqConfig.isEmpty()) {
             configViews.get(0).setError();
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(reqCarpetEditText)) {
             reqCarpetEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(reqBudgetEditText)) {
             reqBudgetEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         reqStatusTextView.setError(null);
         if (reqStatusRadioGroup.getCheckedRadioButtonId() == -1) {
             reqStatusTextView.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         } else {
             RadioButton reqStatusTypeRadio = reqStatusRadioGroup.findViewById(reqStatusRadioGroup.getCheckedRadioButtonId());
@@ -184,10 +202,12 @@ public class AddClientActivity extends AppCompatActivity {
         }
         if (isEditTextEmpty(reqSpecsEditText)) {
             reqSpecsEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
         if (isEditTextEmpty(reqRemarksEditText)) {
             reqRemarksEditText.setError(Values.ERROR_REQUIRED);
+            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
 

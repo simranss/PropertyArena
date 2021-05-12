@@ -95,8 +95,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        addProjectFab.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddProjectActivity.class)));
-        addClientFab.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddClientActivity.class)));
+        addProjectFab.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AddProjectActivity.class));
+            addProjectFab.startAnimation(fabClose);
+            addClientFab.startAnimation(fabClose);
+            fab.startAnimation(fabRAnticlockwise);
+            addProjectFab.setClickable(false);
+            addClientFab.setClickable(false);
+            isOpen = false;
+        });
+        addClientFab.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AddClientActivity.class));
+            addProjectFab.startAnimation(fabClose);
+            addClientFab.startAnimation(fabClose);
+            fab.startAnimation(fabRAnticlockwise);
+            addProjectFab.setClickable(false);
+            addClientFab.setClickable(false);
+            isOpen = false;
+        });
 
         // navigation drawer items onClick
         navView.setNavigationItemSelectedListener(item -> {

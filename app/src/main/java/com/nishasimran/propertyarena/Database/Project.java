@@ -19,7 +19,7 @@ public class Project {
     @ColumnInfo(name = Values.COLUMN_CONFIGURATION)
     private String config;
     @ColumnInfo(name = Values.COLUMN_CARPET)
-    private float carpet;
+    private int carpet;
     @ColumnInfo(name = Values.COLUMN_RATE)
     private float rate;
     @ColumnInfo(name = Values.COLUMN_POSSESSION_DATE)
@@ -44,7 +44,7 @@ public class Project {
     private String specifications;
 
 
-    public Project(String projectName, String developerName, String zone, String config, float carpet, float rate, long possessionDate, String status, String paymentPlan, String scheme, String sector, String launchType, float landParcel , int towers, int units, String specifications) {
+    public Project(String projectName, String developerName, String zone, String config, int carpet, float rate, long possessionDate, String status, String paymentPlan, String scheme, String sector, String launchType, float landParcel , int towers, int units, String specifications) {
         this.projectName = projectName;
         this.developerName = developerName;
         this.zone = zone;
@@ -104,11 +104,11 @@ public class Project {
         this.config = config;
     }
 
-    public float getCarpet() {
+    public int getCarpet() {
         return carpet;
     }
 
-    public void setCarpet(float carpet) {
+    public void setCarpet(int carpet) {
         this.carpet = carpet;
     }
 

@@ -44,6 +44,10 @@ public class Values {
     public final static String[] EMPLOYMENT_OPTIONS = {"Select One", "Businessman", "Service", "Professional"};
 
     public final static String ERROR_REQUIRED = "Required";
+    public final static String ERROR_PHONE = "Invalid phone no.";
+    public final static String ERROR_EMAIL = "Invalid email";
 
     public final static String MESSAGE_FILL_ALL = "Please fill all the details";
+    public final static String MESSAGE_INVALID_PHONE = "Please enter a valid phone no.";
+    public final static String MESSAGE_INVALID_EMAIL = "Please enter a valid email";
 }
