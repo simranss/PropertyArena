@@ -15,6 +15,7 @@
     <string name="add_project_desc">Add project</string>
     <string name="add_client_desc">Add client</string>
     <string name="add_conf_price_desc">Add another configuration with pricing</string>
+    <string name="project_img_desc">Project image</string>
 
     <string name="project_name_hint">Project name</string>
     <string name="developer_name_hint">Developer name</string>
@@ -61,4 +62,8 @@
     <string name="launch_relaunch">Relaunch</string>
 
     <string name="save">Save</string>
+
+    <string name="developer_head">Developer:</string>
+    <string name="zone_head">Zone:</string>
+    <string name="carpet_head">Carpet:</string>
 </resources>

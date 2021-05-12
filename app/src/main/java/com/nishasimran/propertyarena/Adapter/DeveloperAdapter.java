@@ -12,8 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nishasimran.propertyarena.Database.Project;
 import com.nishasimran.propertyarena.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.DeveloperViewHolder> {
@@ -30,13 +28,18 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
     @NonNull
     @Override
     public DeveloperViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.developer_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.project_list_item, parent, false);
         return new DeveloperViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DeveloperViewHolder holder, int position) {
-        holder.developerTextView.setText(projects.get(position).getDeveloperName());
+        holder.projectTextView.setText(projects.get(position).getProjectName());
+        String carpet = projects.get(position).getCarpet() + "sq. ft.";
+        holder.carpetTextView.setText(carpet);
+        holder.statusTextView.setText(projects.get(position).getStatus());
+        holder.mainHeadTextView.setText(R.string.developer_head);
+        holder.mainTextView.setText(projects.get(position).getDeveloperName());
     }
 
     @Override
@@ -46,11 +49,15 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
 
     static class DeveloperViewHolder extends RecyclerView.ViewHolder {
 
-        TextView developerTextView;
+        TextView mainTextView, projectTextView, statusTextView, carpetTextView, mainHeadTextView;
 
         public DeveloperViewHolder(@NonNull View itemView) {
             super(itemView);
-            developerTextView = itemView.findViewById(R.id.textView);
+            mainTextView = itemView.findViewById(R.id.dev_list_main);
+            mainHeadTextView = itemView.findViewById(R.id.dev_list_main_head);
+            projectTextView = itemView.findViewById(R.id.dev_list_project_name);
+            statusTextView = itemView.findViewById(R.id.dev_list_status);
+            carpetTextView = itemView.findViewById(R.id.dev_list_carpet);
         }
     }
 }
