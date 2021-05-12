@@ -11,8 +11,6 @@ public class ProjectRepository {
     private final ProjectDAO dao;
     private final LiveData<List<Project>> allProjects;
 
-    private static ProjectRepository INSTANCE = null;
-
     // Note that in order to unit test the AlbumRepository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
     // See the BasicSample in the android-architecture-components repository at
@@ -20,19 +18,12 @@ public class ProjectRepository {
     public ProjectRepository(Application application) {
         ProjectRoomDatabase db = ProjectRoomDatabase.getDatabase(application);
         dao = db.projectDAO();
-        allProjects = dao.getAllAlbums();
-    }
-
-    public static ProjectRepository getInstance(Application application) {
-        if (INSTANCE == null) {
-            INSTANCE = new ProjectRepository(application);
-        }
-        return INSTANCE;
+        allProjects = dao.getAllProjects();
     }
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    public LiveData<List<Project>> getAllAlbums() {
+    public LiveData<List<Project>> getAllProjects() {
         return allProjects;
     }
 

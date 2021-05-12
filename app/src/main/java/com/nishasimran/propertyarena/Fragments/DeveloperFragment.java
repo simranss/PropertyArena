@@ -1,11 +1,9 @@
 package com.nishasimran.propertyarena.Fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,12 +14,11 @@ import android.view.ViewGroup;
 
 import com.nishasimran.propertyarena.Adapter.DeveloperAdapter;
 import com.nishasimran.propertyarena.Database.Project;
-import com.nishasimran.propertyarena.Database.ProjectRepository;
+import com.nishasimran.propertyarena.Database.ProjectViewModel;
 import com.nishasimran.propertyarena.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 
 public class DeveloperFragment extends Fragment {
 
@@ -55,7 +52,7 @@ public class DeveloperFragment extends Fragment {
 
         recyclerView.setAdapter(adapter);
 
-        ProjectRepository.getInstance(activity.getApplication()).getAllAlbums().observe(activity, projects -> {
+        ProjectViewModel.getInstance(activity, activity.getApplication()).getAllProjects().observe(activity, projects -> {
             Log.d(TAG, "projects changed: " + projects);
             DeveloperFragment.this.projects.clear();
             DeveloperFragment.this.projects.addAll(projects);

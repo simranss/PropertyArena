@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.CustomView.ConfigView;
 import com.nishasimran.propertyarena.Database.Project;
-import com.nishasimran.propertyarena.Database.ProjectRepository;
+import com.nishasimran.propertyarena.Database.ProjectViewModel;
 import com.nishasimran.propertyarena.Database.Values;
 import com.nishasimran.propertyarena.R;
 
@@ -122,7 +122,7 @@ public class AddProjectActivity extends AppCompatActivity {
 
                 Project project = new Project(projectName, developerName, zone, config.toString(), carpet, rate, possessionDate, status, paymentPlan, scheme, sector, launchType, landParcel, towers, units, specs);
 
-                ProjectRepository.getInstance(getApplication()).insert(project);
+                ProjectViewModel.getInstance(this, getApplication()).insert(project);
 
                 finish();
             }
