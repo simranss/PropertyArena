@@ -12,11 +12,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 // @Database(entities = {Project.class, Client.class}, version = 1, exportSchema = false)
-@Database(entities = {Project.class}, version = 1, exportSchema = false)
+@Database(entities = {Project.class, Client.class}, version = 1, exportSchema = false)
 public abstract class ProjectRoomDatabase extends RoomDatabase {
 
     public abstract ProjectDAO projectDAO();
-    // public abstract ClientDAO clientDAO();
+    public abstract ClientDAO clientDAO();
     
     private static volatile ProjectRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -48,7 +48,7 @@ public abstract class ProjectRoomDatabase extends RoomDatabase {
                 // Populate the database in the background.
                 // If you want to start with more words, just add them.
                 ProjectDAO dao = INSTANCE.projectDAO();
-                // ClientDAO keyDao = INSTANCE.clientDAO();
+                ClientDAO keyDao = INSTANCE.clientDAO();
             });
         }
     };
