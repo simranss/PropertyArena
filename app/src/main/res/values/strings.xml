@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Property Arena</string>
+
+    <string name="developer">Developer</string>
+    <string name="zone">Zone</string>
+    <string name="sector">Sector</string>
+    <string name="client">Client</string>
+
+    <string name="open_drawer">Open the drawer</string>
+    <string name="close_drawer">Close the drawer</string>
+
+    <string name="hello_blank_fragment">Coming Soon</string>
+
+    <string name="add_desc">Add</string>
+    <string name="add_project_desc">Add project</string>
+    <string name="add_client_desc">Add client</string>
+    <string name="add_conf_price_desc">Add another configuration with pricing</string>
+
+    <string name="project_name_hint">Project name</string>
+    <string name="developer_name_hint">Developer name</string>
+    <string name="zone_hint">Zone</string>
+    <string name="config_hint">Configuration</string>
+    <string name="carpet_hint">Carpet</string>
+    <string name="rate_hint">Rate per sq.ft.</string>
+    <string name="possession_hint">Possession date</string>
+    <string name="status_hint">Status</string>
+    <string name="payment_plan_hint">Payment plan</string>
+    <string name="scheme_hint">Schemes</string>
+    <string name="sector_hint">Sector</string>
+    <string name="launch_type_hint">Launch type</string>
+    <string name="land_parcel_hint">Land parcel</string>
+    <string name="towers_hint">No. of towers</string>
+    <string name="units_hint">No. of units</string>
+    <string name="specs_hint">Specifications</string>
+
+    <string name="carpet_unit">sq. ft.</string>
+    <string name="land_parcel_unit">acres</string>
+
+    <string name="status_completed">RTMI</string>
+    <string name="status_in_progress">Under Construction</string>
+
+    <string name="sector_residential">Residential</string>
+    <string name="sector_commercial">Commercial</string>
+    <string name="sector_offices">Offices</string>
+
+    <string name="launch_prelaunch">Pre-launch</string>
+    <string name="launch_launch">Launch</string>
+    <string name="launch_relaunch">Relaunch</string>
+
+    <string name="save">Save</string>
+</resources>
