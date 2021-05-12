@@ -41,7 +41,7 @@ public class Values {
 
     public final static String[] CONFIG_TYPES = {"BHK", "RK"};
     public final static String[] PRICING_UNITS = {"L", "Cr"};
-    public final static String[] EMPLOYMENT_OPTIONS = {"Select One", "Businessman, Service, Professional"};
+    public final static String[] EMPLOYMENT_OPTIONS = {"Select One", "Businessman", "Service", "Professional"};
 
     public final static String ERROR_REQUIRED = "Required";
 

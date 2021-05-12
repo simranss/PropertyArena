@@ -15,7 +15,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
@@ -33,21 +32,19 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "MainActivity";
 
-    DrawerLayout drawerLayout;
-    NavigationView navView;
-    ActionBarDrawerToggle toggle;
-    MaterialToolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
 
-    FloatingActionButton fab, addProjectFab, addClientFab;
-    boolean isOpen = false;
-    Animation fabOpen, fabClose, fabRClockwise, fabRAnticlockwise;
+    private FloatingActionButton fab, addProjectFab, addClientFab;
+    private boolean isOpen = false;
+    private Animation fabOpen, fabClose, fabRClockwise, fabRAnticlockwise;
 
     // fragments
-    Fragment developerFragment;
-    final Fragment zoneFragment = new ZoneFragment();
-    final Fragment sectorFragment = new SectorFragment();
-    final Fragment clientsFragment = new ClientsFragment();
-    final Fragment splashFragment = new SplashFragment();
+    private Fragment developerFragment;
+    private final Fragment zoneFragment = new ZoneFragment();
+    private final Fragment sectorFragment = new SectorFragment();
+    private Fragment clientsFragment;
+    private final Fragment splashFragment = new SplashFragment();
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -55,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.toolbar);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         // initialize the drawer layout
         drawerLayout = findViewById(R.id.drawer);
-        navView = findViewById(R.id.nav_view);
+        NavigationView navView = findViewById(R.id.nav_view);
 
         fab = findViewById(R.id.add_fab);
         addProjectFab = findViewById(R.id.add_project_fab);
@@ -68,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         // fragments
         developerFragment = new DeveloperFragment(this);
+        clientsFragment = new ClientsFragment(this);
 
         // by default load the splash fragment
         if (savedInstanceState == null) {
