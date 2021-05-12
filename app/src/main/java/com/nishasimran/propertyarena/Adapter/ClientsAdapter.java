@@ -30,13 +30,13 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ClientsV
     @NotNull
     @Override
     public ClientsViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.developer_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.clients_list_item, parent, false);
         return new ClientsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ClientsViewHolder holder, int position) {
-        holder.developerTextView.setText(clients.get(position).getName());
+        holder.clientsTextView.setText(clients.get(position).getName());
     }
 
     @Override
@@ -46,11 +46,11 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ClientsV
 
     static class ClientsViewHolder extends RecyclerView.ViewHolder {
 
-        TextView developerTextView;
+        TextView clientsTextView;
 
         public ClientsViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
-            developerTextView = itemView.findViewById(R.id.textView);
+            clientsTextView = itemView.findViewById(R.id.textview);
         }
     }
 }
