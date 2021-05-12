@@ -2,6 +2,8 @@ package com.nishasimran.propertyarena.Database;
 
 public class Values {
 
+    public final static String COUNTRY_CODE = "+91";
+
     public final static String COLUMN_ID = "_id";
     public final static String COLUMN_PROJECT_NAME = "project_name";
     public final static String COLUMN_DEVELOPER_NAME = "developer_name";
@@ -27,6 +29,7 @@ public class Values {
     public final static String COLUMN_CLIENT_EMAIL = "email";
     public final static String COLUMN_REQ_LOCALITY = "locality";
     public final static String COLUMN_REQ_CONF = "config";
+    public final static String COLUMN_REQ_CARPET = "carpet";
     public final static String COLUMN_REQ_BUDGET = "budget";
     public final static String COLUMN_REQ_STATUS = "status";
     public final static String COLUMN_REQ_SPECS = "specs";
@@ -38,7 +41,9 @@ public class Values {
 
     public final static String[] CONFIG_TYPES = {"BHK", "RK"};
     public final static String[] PRICING_UNITS = {"L", "Cr"};
-    public final static String[] EMPLOYMENT_OPTIONS = {"Businessman, Service, Professional"};
+    public final static String[] EMPLOYMENT_OPTIONS = {"Select One", "Businessman, Service, Professional"};
 
     public final static String ERROR_REQUIRED = "Required";
+
+    public final static String MESSAGE_FILL_ALL = "Please fill all the details";
 }

@@ -27,6 +27,8 @@ public class Client {
     private String locality;
     @ColumnInfo(name = Values.COLUMN_REQ_CONF)
     private String config;
+    @ColumnInfo(name = Values.COLUMN_REQ_CARPET)
+    private float carpet;
     @ColumnInfo(name = Values.COLUMN_REQ_BUDGET)
     private String budget;
     @ColumnInfo(name = Values.COLUMN_REQ_STATUS)
@@ -38,7 +40,7 @@ public class Client {
 
 
 
-    public Client(String name, String resAddress, String offAddress, String employment, String phone, String email, String locality, String config, String budget, String status, String specs, String remarks) {
+    public Client(String name, String resAddress, String offAddress, String employment, String phone, String email, String locality, String config, float carpet, String budget, String status, String specs, String remarks) {
         this.name = name;
         this.resAddress = resAddress;
         this.offAddress = offAddress;
@@ -47,6 +49,7 @@ public class Client {
         this.email = email;
         this.locality = locality;
         this.config = config;
+        this.carpet = carpet;
         this.budget = budget;
         this.status = status;
         this.specs = specs;
@@ -121,6 +124,14 @@ public class Client {
 
     public void setConfig(String config) {
         this.config = config;
+    }
+
+    public float getCarpet() {
+        return carpet;
+    }
+
+    public void setCarpet(float carpet) {
+        this.carpet = carpet;
     }
 
     public String getBudget() {

@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.CustomView.ConfigView;
@@ -29,8 +30,9 @@ import java.util.Locale;
 
 public class AddProjectActivity extends AppCompatActivity {
 
-    private final String TAG = "AddEntryActivity";
+    private final String TAG = "AddProjectAct";
 
+    // views
     private RadioGroup launchRadioGroup, statusRadioGroup, sectorRadioGroup;
     private RadioButton statusInProgressRadio;
     private TextView launchTextView, statusTextView, sectorTextView;
@@ -40,6 +42,7 @@ public class AddProjectActivity extends AppCompatActivity {
     private LinearLayout configContainer;
     private EditText projectNameEditText, developerNameEditText, zoneEditText, rateEditText, carpetEditText, possessionDateEditText, statusEditText, paymentPlanEditText, schemeEditText, landParcelEditText, towersEditText, unitsEditText, specsEditText;
 
+    // values
     private String projectName, developerName, launchType, zone, status, paymentPlan, scheme, sector, specs;
     private float rate = 0.0f, carpet = 0.0f, landParcel = 0.0f;
     private final ArrayList<String> config = new ArrayList<>();
@@ -125,6 +128,8 @@ public class AddProjectActivity extends AppCompatActivity {
                 ProjectViewModel.getInstance(this, getApplication()).insert(project);
 
                 finish();
+            } else {
+                Toast.makeText(AddProjectActivity.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -237,31 +242,31 @@ public class AddProjectActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        projectNameEditText = findViewById(R.id.a_e_project_name);
-        developerNameEditText = findViewById(R.id.a_e_developer_name);
-        launchRadioGroup = findViewById(R.id.a_e_launch_radio_grp);
-        zoneEditText = findViewById(R.id.a_e_zone);
-        rateEditText = findViewById(R.id.a_e_rate);
-        carpetEditText = findViewById(R.id.a_e_carpet);
-        configContainer = findViewById(R.id.a_e_config_conf_container);
-        addConfigImageView = findViewById(R.id.a_e_add_conf);
-        possessionDateEditText = findViewById(R.id.a_e_possession);
-        statusRadioGroup = findViewById(R.id.a_e_status_radio_grp);
-        statusEditText = findViewById(R.id.a_e_status);
-        paymentPlanEditText = findViewById(R.id.a_e_payment_plan);
-        schemeEditText = findViewById(R.id.a_e_scheme);
-        sectorRadioGroup = findViewById(R.id.a_e_sector_radio_grp);
-        landParcelEditText = findViewById(R.id.a_e_land_parcel);
-        towersEditText = findViewById(R.id.a_e_towers);
-        unitsEditText = findViewById(R.id.a_e_units);
-        specsEditText = findViewById(R.id.a_e_specs);
-        saveButton = findViewById(R.id.a_e_save);
+        projectNameEditText = findViewById(R.id.a_p_project_name);
+        developerNameEditText = findViewById(R.id.a_p_developer_name);
+        launchRadioGroup = findViewById(R.id.a_p_launch_radio_grp);
+        zoneEditText = findViewById(R.id.a_p_zone);
+        rateEditText = findViewById(R.id.a_p_rate);
+        carpetEditText = findViewById(R.id.a_p_carpet);
+        configContainer = findViewById(R.id.a_p_conf_container);
+        addConfigImageView = findViewById(R.id.a_p_add_conf);
+        possessionDateEditText = findViewById(R.id.a_p_possession);
+        statusRadioGroup = findViewById(R.id.a_p_status_radio_grp);
+        statusEditText = findViewById(R.id.a_p_status);
+        paymentPlanEditText = findViewById(R.id.a_p_payment_plan);
+        schemeEditText = findViewById(R.id.a_p_scheme);
+        sectorRadioGroup = findViewById(R.id.a_p_sector_radio_grp);
+        landParcelEditText = findViewById(R.id.a_p_land_parcel);
+        towersEditText = findViewById(R.id.a_p_towers);
+        unitsEditText = findViewById(R.id.a_p_units);
+        specsEditText = findViewById(R.id.a_p_specs);
+        saveButton = findViewById(R.id.a_p_save);
 
-        launchTextView = findViewById(R.id.a_e_launch_head);
-        statusTextView = findViewById(R.id.a_e_status_head);
-        sectorTextView = findViewById(R.id.a_e_sector_head);
+        launchTextView = findViewById(R.id.a_p_launch_head);
+        statusTextView = findViewById(R.id.a_p_status_head);
+        sectorTextView = findViewById(R.id.a_p_sector_head);
 
-        statusInProgressRadio = findViewById(R.id.a_e_status_in_progress);
+        statusInProgressRadio = findViewById(R.id.a_p_status_in_progress);
 
     }
 

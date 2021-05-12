@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         addProjectFab.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddProjectActivity.class)));
+        addClientFab.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddClientActivity.class)));
 
         // navigation drawer items onClick
         navView.setNavigationItemSelectedListener(item -> {

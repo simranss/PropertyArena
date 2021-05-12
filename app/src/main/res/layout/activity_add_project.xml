@@ -43,7 +43,7 @@
             android:paddingVertical="16dp">
 
             <EditText
-                android:id="@+id/a_e_project_name"
+                android:id="@+id/a_p_project_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -55,20 +55,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/a_e_developer_name"
+                android:id="@+id/a_p_developer_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 android:autofillHints="@string/developer_name_hint"
                 android:hint="@string/developer_name_hint"
-                android:inputType="textCapWords"
+                android:inputType="textCapWords|textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_project_name" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_project_name" />
 
             <TextView
-                android:id="@+id/a_e_launch_head"
+                android:id="@+id/a_p_launch_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -76,10 +76,10 @@
                 android:text="@string/launch_type_hint"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_developer_name" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_developer_name" />
 
             <RadioGroup
-                android:id="@+id/a_e_launch_radio_grp"
+                android:id="@+id/a_p_launch_radio_grp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -88,10 +88,10 @@
                 android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_launch_head">
+                app:layout_constraintTop_toBottomOf="@id/a_p_launch_head">
 
                 <RadioButton
-                    android:id="@+id/a_e_launch_prelaunch"
+                    android:id="@+id/a_p_launch_prelaunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -99,7 +99,7 @@
                     android:text="@string/launch_prelaunch" />
 
                 <RadioButton
-                    android:id="@+id/a_e_launch_launch"
+                    android:id="@+id/a_p_launch_launch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -107,7 +107,7 @@
                     android:text="@string/launch_launch" />
 
                 <RadioButton
-                    android:id="@+id/a_e_launch_relaunch"
+                    android:id="@+id/a_p_launch_relaunch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,7 +117,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/a_e_zone"
+                android:id="@+id/a_p_zone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -127,10 +127,10 @@
                 android:inputType="textCapWords"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_launch_radio_grp" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_launch_radio_grp" />
 
             <EditText
-                android:id="@+id/a_e_rate"
+                android:id="@+id/a_p_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -141,10 +141,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="0.4"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_zone" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_zone" />
 
             <EditText
-                android:id="@+id/a_e_carpet"
+                android:id="@+id/a_p_carpet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -153,34 +153,34 @@
                 android:autofillHints="@string/carpet_hint"
                 android:hint="@string/carpet_hint"
                 android:inputType="numberDecimal"
-                app:layout_constraintEnd_toStartOf="@id/a_e_carpet_unit"
+                app:layout_constraintEnd_toStartOf="@id/a_p_carpet_unit"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_rate" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_rate" />
 
             <TextView
-                android:id="@+id/a_e_carpet_unit"
+                android:id="@+id/a_p_carpet_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="@string/carpet_unit"
                 android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/a_e_carpet"
+                app:layout_constraintBaseline_toBaselineOf="@+id/a_p_carpet"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <LinearLayout
-                android:id="@+id/a_e_config_conf_container"
+                android:id="@+id/a_p_conf_container"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/border_background"
                 android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/a_e_add_conf"
+                app:layout_constraintEnd_toStartOf="@id/a_p_add_conf"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_carpet" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_carpet" />
 
             <ImageView
-                android:id="@+id/a_e_add_conf"
+                android:id="@+id/a_p_add_conf"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_marginTop="8dp"
@@ -191,12 +191,12 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:src="@drawable/add"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/a_e_config_conf_container"
-                app:layout_constraintTop_toBottomOf="@id/a_e_carpet"
+                app:layout_constraintStart_toEndOf="@id/a_p_conf_container"
+                app:layout_constraintTop_toBottomOf="@id/a_p_carpet"
                 app:tint="@color/grey" />
 
             <EditText
-                android:id="@+id/a_e_possession"
+                android:id="@+id/a_p_possession"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -207,10 +207,10 @@
                 android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_config_conf_container" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_conf_container" />
 
             <TextView
-                android:id="@+id/a_e_status_head"
+                android:id="@+id/a_p_status_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -218,10 +218,10 @@
                 android:text="@string/status_hint"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_possession" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_possession" />
 
             <RadioGroup
-                android:id="@+id/a_e_status_radio_grp"
+                android:id="@+id/a_p_status_radio_grp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -230,10 +230,10 @@
                 android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_status_head">
+                app:layout_constraintTop_toBottomOf="@id/a_p_status_head">
 
                 <RadioButton
-                    android:id="@+id/a_e_status_completed"
+                    android:id="@+id/a_p_status_completed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -241,7 +241,7 @@
                     android:text="@string/status_completed" />
 
                 <RadioButton
-                    android:id="@+id/a_e_status_in_progress"
+                    android:id="@+id/a_p_status_in_progress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -251,7 +251,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/a_e_status"
+                android:id="@+id/a_p_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -260,10 +260,10 @@
                 android:inputType="textCapSentences"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_status_radio_grp" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_status_radio_grp" />
 
             <EditText
-                android:id="@+id/a_e_payment_plan"
+                android:id="@+id/a_p_payment_plan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -273,10 +273,10 @@
                 android:inputType="textCapSentences"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_status" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_status" />
 
             <EditText
-                android:id="@+id/a_e_scheme"
+                android:id="@+id/a_p_scheme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -286,10 +286,10 @@
                 android:inputType="textCapSentences"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_payment_plan" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_payment_plan" />
 
             <TextView
-                android:id="@+id/a_e_sector_head"
+                android:id="@+id/a_p_sector_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -297,10 +297,10 @@
                 android:text="@string/sector_hint"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_scheme" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_scheme" />
 
             <RadioGroup
-                android:id="@+id/a_e_sector_radio_grp"
+                android:id="@+id/a_p_sector_radio_grp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -309,10 +309,10 @@
                 android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_sector_head">
+                app:layout_constraintTop_toBottomOf="@id/a_p_sector_head">
 
                 <RadioButton
-                    android:id="@+id/a_e_sector_residential"
+                    android:id="@+id/a_p_sector_residential"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -320,7 +320,7 @@
                     android:text="@string/sector_residential" />
 
                 <RadioButton
-                    android:id="@+id/a_e_sector_commercial"
+                    android:id="@+id/a_p_sector_commercial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -328,7 +328,7 @@
                     android:text="@string/sector_commercial" />
 
                 <RadioButton
-                    android:id="@+id/a_e_sector_offices"
+                    android:id="@+id/a_p_sector_offices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -338,17 +338,17 @@
             </RadioGroup>
 
             <TextView
-                android:id="@+id/a_e_land_parcel_unit"
+                android:id="@+id/a_p_land_parcel_unit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="@string/land_parcel_unit"
                 android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/a_e_land_parcel"
+                app:layout_constraintBaseline_toBaselineOf="@+id/a_p_land_parcel"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
-                android:id="@+id/a_e_land_parcel"
+                android:id="@+id/a_p_land_parcel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -357,12 +357,12 @@
                 android:autofillHints="@string/land_parcel_hint"
                 android:hint="@string/land_parcel_hint"
                 android:inputType="numberDecimal"
-                app:layout_constraintEnd_toStartOf="@id/a_e_land_parcel_unit"
+                app:layout_constraintEnd_toStartOf="@id/a_p_land_parcel_unit"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_sector_radio_grp" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_sector_radio_grp" />
 
             <EditText
-                android:id="@+id/a_e_towers"
+                android:id="@+id/a_p_towers"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -372,10 +372,10 @@
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_land_parcel" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_land_parcel" />
 
             <EditText
-                android:id="@+id/a_e_units"
+                android:id="@+id/a_p_units"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -385,10 +385,10 @@
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_towers" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_towers" />
 
             <EditText
-                android:id="@+id/a_e_specs"
+                android:id="@+id/a_p_specs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -398,10 +398,10 @@
                 android:inputType="textCapSentences"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_units" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_units" />
 
             <Button
-                android:id="@+id/a_e_save"
+                android:id="@+id/a_p_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -409,7 +409,7 @@
                 android:text="@string/save"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_e_specs" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_specs" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

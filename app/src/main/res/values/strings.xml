@@ -23,7 +23,7 @@
     <string name="carpet_hint">Carpet</string>
     <string name="rate_hint">Rate per sq.ft.</string>
     <string name="possession_hint">Possession date</string>
-    <string name="status_hint">Status</string>
+    <string name="status_hint">Status:</string>
     <string name="payment_plan_hint">Payment plan</string>
     <string name="scheme_hint">Schemes</string>
     <string name="sector_hint">Sector</string>
@@ -32,6 +32,19 @@
     <string name="towers_hint">No. of towers</string>
     <string name="units_hint">No. of units</string>
     <string name="specs_hint">Specifications</string>
+    <string name="name_hint">Name</string>
+    <string name="res_add_hint">Residential Address</string>
+    <string name="off_add_hint">Office Address</string>
+    <string name="employment_hint">Employment:</string>
+    <string name="phone_hint">Mobile No.</string>
+    <string name="email_hint">Email</string>
+    <string name="req_locality_hint">Required Locality</string>
+    <string name="req_conf_hint">Required Configuration:</string>
+    <string name="req_carpet_hint">Required Carpet</string>
+    <string name="req_budget_hint">Required Budget</string>
+    <string name="req_status_hint">Required Status</string>
+    <string name="req_specs_hint">Required Specifications</string>
+    <string name="remarks_hint">Remarks</string>
 
     <string name="carpet_unit">sq. ft.</string>
     <string name="land_parcel_unit">acres</string>
