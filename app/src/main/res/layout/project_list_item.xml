@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pro_list_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
@@ -24,7 +25,7 @@
             android:padding="8dp">
 
             <ImageView
-                android:id="@+id/dev_list_img"
+                android:id="@+id/pro_list_img"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:contentDescription="@string/project_img_desc"
@@ -35,82 +36,82 @@
                 app:tint="@color/grey" />
 
             <TextView
-                android:id="@+id/dev_list_project_name"
+                android:id="@+id/pro_list_project_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/dev_list_img"
+                app:layout_constraintStart_toEndOf="@id/pro_list_img"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Project Name" />
 
             <TextView
-                android:id="@+id/dev_list_carpet_head"
+                android:id="@+id/pro_list_carpet_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/carpet_head"
                 android:textSize="14dp"
-                app:layout_constraintStart_toEndOf="@id/dev_list_img"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_project_name" />
+                app:layout_constraintStart_toEndOf="@id/pro_list_img"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_project_name" />
 
             <TextView
-                android:id="@+id/dev_list_carpet"
+                android:id="@+id/pro_list_carpet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:textSize="14dp"
-                app:layout_constraintStart_toEndOf="@id/dev_list_carpet_head"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_project_name"
+                app:layout_constraintStart_toEndOf="@id/pro_list_carpet_head"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_project_name"
                 tools:text="200sq. ft." />
 
             <TextView
-                android:id="@+id/dev_list_status_head"
+                android:id="@+id/pro_list_status_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginStart="4dp"
                 android:text="@string/status_hint"
                 android:textSize="14dp"
-                app:layout_constraintStart_toEndOf="@id/dev_list_img"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_carpet_head" />
+                app:layout_constraintStart_toEndOf="@id/pro_list_img"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head" />
 
             <TextView
-                android:id="@+id/dev_list_status"
+                android:id="@+id/pro_list_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginStart="2dp"
                 android:textSize="14dp"
                 android:maxLines="1"
-                app:layout_constraintStart_toEndOf="@id/dev_list_status_head"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_carpet_head"
+                app:layout_constraintStart_toEndOf="@id/pro_list_status_head"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head"
                 tools:text="RTMI" />
 
             <TextView
-                android:id="@+id/dev_list_main_head"
+                android:id="@+id/pro_list_main_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 tools:text="@string/developer_head"
                 android:textSize="16dp"
-                app:layout_constraintStart_toEndOf="@id/dev_list_img"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_status_head" />
+                app:layout_constraintStart_toEndOf="@id/pro_list_img"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_status_head" />
 
             <TextView
-                android:id="@+id/dev_list_main"
+                android:id="@+id/pro_list_main"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:textSize="16dp"
-                app:layout_constraintStart_toEndOf="@id/dev_list_main_head"
-                app:layout_constraintTop_toBottomOf="@id/dev_list_status_head"
+                app:layout_constraintStart_toEndOf="@id/pro_list_main_head"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_status_head"
                 tools:text="Developer Name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
