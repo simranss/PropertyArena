@@ -6,6 +6,8 @@ import androidx.room.PrimaryKey;
 
 import com.nishasimran.propertyarena.Values.Values;
 
+import org.jetbrains.annotations.NotNull;
+
 @Entity(tableName = Values.TABLE_PROJECTS)
 public class Project {
 
@@ -200,5 +202,28 @@ public class Project {
 
     public void setSpecifications(String specifications) {
         this.specifications = specifications;
+    }
+
+    @Override
+    public @NotNull String toString() {
+        return "Project {" +
+                "id=" + id +
+                ", projectName='" + projectName + '\'' +
+                ", developerName='" + developerName + '\'' +
+                ", zone='" + zone + '\'' +
+                ", config='" + config + '\'' +
+                ", carpet=" + carpet +
+                ", rate=" + rate +
+                ", possessionDate=" + possessionDate +
+                ", status='" + status + '\'' +
+                ", paymentPlan='" + paymentPlan + '\'' +
+                ", scheme='" + scheme + '\'' +
+                ", sector='" + sector + '\'' +
+                ", launchType='" + launchType + '\'' +
+                ", landParcel=" + landParcel +
+                ", towers=" + towers +
+                ", units=" + units +
+                ", specifications='" + specifications + '\'' +
+                " }";
     }
 }

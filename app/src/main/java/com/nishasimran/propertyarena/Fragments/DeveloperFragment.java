@@ -53,7 +53,6 @@ public class DeveloperFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         ProjectViewModel.getInstance(activity, activity.getApplication()).getAllProjects().observe(activity, projects -> {
-            Log.d(TAG, "projects changed: " + projects);
             DeveloperFragment.this.projects.clear();
             DeveloperFragment.this.projects.addAll(projects);
             adapter.notifyDataSetChanged();
