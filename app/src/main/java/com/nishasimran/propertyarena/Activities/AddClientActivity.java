@@ -150,14 +150,12 @@ public class AddClientActivity extends AppCompatActivity {
             Toast.makeText(AddClientActivity.this, Values.MESSAGE_INVALID_PHONE, Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (isEditTextEmpty(emailEditText)) {
-            emailEditText.setError(Values.ERROR_REQUIRED);
-            Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (!Patterns.EMAIL_ADDRESS.matcher(emailEditText.getText().toString().trim()).matches()) {
-            emailEditText.setError(Values.ERROR_EMAIL);
-            Toast.makeText(AddClientActivity.this, Values.MESSAGE_INVALID_EMAIL, Toast.LENGTH_SHORT).show();
-            return false;
+        if (!isEditTextEmpty(emailEditText)) {
+            if (!Patterns.EMAIL_ADDRESS.matcher(emailEditText.getText().toString().trim()).matches()) {
+                emailEditText.setError(Values.ERROR_EMAIL);
+                Toast.makeText(AddClientActivity.this, Values.MESSAGE_INVALID_EMAIL, Toast.LENGTH_SHORT).show();
+                return false;
+            }
         }
         if (isEditTextEmpty(reqLocalityEditText)) {
             reqLocalityEditText.setError(Values.ERROR_REQUIRED);
