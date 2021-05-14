@@ -8,6 +8,8 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.nishasimran.propertyarena.Values.Values;
+
 import java.util.List;
 
 @Dao

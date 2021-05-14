@@ -8,10 +8,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.nishasimran.propertyarena.Values.Values;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-// @Database(entities = {Project.class, Client.class}, version = 1, exportSchema = false)
 @Database(entities = {Project.class, Client.class}, version = 1, exportSchema = false)
 public abstract class ProjectRoomDatabase extends RoomDatabase {
 

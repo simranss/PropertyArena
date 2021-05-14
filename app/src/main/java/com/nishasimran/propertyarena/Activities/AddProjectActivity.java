@@ -22,7 +22,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.CustomView.ConfigView;
 import com.nishasimran.propertyarena.Database.Project;
 import com.nishasimran.propertyarena.Database.ProjectViewModel;
-import com.nishasimran.propertyarena.Database.Values;
+import com.nishasimran.propertyarena.Values.Values;
 import com.nishasimran.propertyarena.R;
 
 import java.util.ArrayList;

@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.nishasimran.propertyarena.Database.Values;
+import com.nishasimran.propertyarena.Values.Values;
 import com.nishasimran.propertyarena.R;
 
-import static com.nishasimran.propertyarena.Database.Values.CONFIG_TYPES;
+import static com.nishasimran.propertyarena.Values.Values.CONFIG_TYPES;
 
 public class ConfigView {
 

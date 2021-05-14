@@ -1,4 +1,4 @@
-package com.nishasimran.propertyarena.Database;
+package com.nishasimran.propertyarena.Values;
 
 public class Values {
 
@@ -50,4 +50,6 @@ public class Values {
     public final static String MESSAGE_FILL_ALL = "Please fill all the details";
     public final static String MESSAGE_INVALID_PHONE = "Please enter a valid phone no.";
     public final static String MESSAGE_INVALID_EMAIL = "Please enter a valid email";
+
+    public final static String KEY_PROJECT_ID = "projectId";
 }
