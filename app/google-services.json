@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "950716205585",
+    "project_id": "property-arena-f3f3e",
+    "storage_bucket": "property-arena-f3f3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950716205585:android:0babc4e4e7f879ed0f7fb0",
+        "android_client_info": {
+          "package_name": "com.nishasimran.propertyarena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950716205585-7s8dh5fbo8pctro02mtdtnijiar0sgic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nishasimran.propertyarena",
+            "certificate_hash": "4bb9a3e117fc44cc7310019b98b01f99a94850ca"
+          }
+        },
+        {
+          "client_id": "950716205585-c8q2dkdkaae2ce69o084rbor4151783t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnLOaaVhBazoYSzJGG_BDRElocv3HY7-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950716205585-c8q2dkdkaae2ce69o084rbor4151783t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
