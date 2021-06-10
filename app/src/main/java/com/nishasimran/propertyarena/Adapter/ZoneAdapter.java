@@ -38,7 +38,7 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
     @Override
     public void onBindViewHolder(@NonNull ZoneViewHolder holder, int position) {
         holder.projectTextView.setText(projects.get(position).getProjectName());
-        String carpet = projects.get(position).getCarpet() + "sq. ft.";
+        String carpet = projects.get(position).getCarpet() + " sq. ft.";
         holder.carpetTextView.setText(carpet);
         holder.statusTextView.setText(projects.get(position).getStatus());
         holder.mainHeadTextView.setText(R.string.zone_head);

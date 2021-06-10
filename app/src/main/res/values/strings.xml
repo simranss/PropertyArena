@@ -26,6 +26,8 @@
     <string name="zone_hint">Zone</string>
     <string name="config_hint">Configuration</string>
     <string name="carpet_hint">Carpet</string>
+    <string name="actual_price_hint">Actual Pricing</string>
+    <string name="price_with_tax_hint">Pricing with taxes</string>
     <string name="rate_hint">Rate per sq.ft.</string>
     <string name="possession_hint">Possession date</string>
     <string name="status_hint">Status:</string>
@@ -70,4 +72,7 @@
     <string name="developer_head">Developer:</string>
     <string name="zone_head">Zone:</string>
     <string name="carpet_head">Carpet:</string>
+    <string name="possession_head">Possession Date:</string>
+    <string name="launch_head">Launch Type:</string>
+    <string name="payment_plan_head">Payment plan:</string>
 </resources>

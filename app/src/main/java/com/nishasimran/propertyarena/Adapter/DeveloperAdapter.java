@@ -39,7 +39,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
     @Override
     public void onBindViewHolder(@NonNull DeveloperViewHolder holder, int position) {
         holder.projectTextView.setText(projects.get(position).getProjectName());
-        String carpet = projects.get(position).getCarpet() + "sq. ft.";
+        String carpet = projects.get(position).getCarpet() + " sq. ft.";
         holder.carpetTextView.setText(carpet);
         holder.statusTextView.setText(projects.get(position).getStatus());
         holder.mainHeadTextView.setText(R.string.developer_head);
