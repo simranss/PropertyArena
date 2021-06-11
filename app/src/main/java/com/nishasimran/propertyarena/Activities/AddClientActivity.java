@@ -75,12 +75,14 @@ public class AddClientActivity extends AppCompatActivity {
 
         reqAddConfigImageView.setOnClickListener(v -> {
             ConfigView configView1 = new ConfigView(AddClientActivity.this);
+            configView1.hideCarpet();
             configViews.add(configView1);
             reqConfigContainer.addView(configView1.getView());
         });
 
 
         ConfigView configView = new ConfigView(AddClientActivity.this);
+        configView.hideCarpet();
         configViews.add(configView);
         reqConfigContainer.addView(configView.getView());
 
@@ -175,7 +177,7 @@ public class AddClientActivity extends AppCompatActivity {
             }
         }
         if (reqConfig.isEmpty()) {
-            configViews.get(0).setError();
+            configViews.get(0).setConfigError();
             Toast.makeText(AddClientActivity.this, Values.MESSAGE_FILL_ALL, Toast.LENGTH_SHORT).show();
             return false;
         }
