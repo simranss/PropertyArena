@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
     android:layout_marginTop="7dp"
+    app:cardBackgroundColor="@color/white_70"
     app:cardCornerRadius="10dp"
     app:cardElevation="6dp"
     tools:ignore="SpUsage">
@@ -14,7 +15,8 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3.5dp"
+        android:layout_margin="6dp"
+        app:cardBackgroundColor="@color/white_90"
         app:cardCornerRadius="10dp"
         app:cardElevation="2dp">
 
@@ -22,6 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="1dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/white_00"
             android:padding="8dp">
 
             <ImageView
@@ -29,18 +33,17 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:contentDescription="@string/project_img_desc"
-                android:src="@drawable/apartment"
+                android:src="@drawable/icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="@color/grey" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/pro_list_project_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:textSize="18dp"
+                android:layout_marginStart="12dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
@@ -51,10 +54,10 @@
                 android:id="@+id/pro_list_carpet_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
                 android:text="@string/carpet_head"
-                android:textSize="14dp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_project_name" />
 
@@ -64,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:textSize="14dp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_carpet_head"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_project_name"
                 tools:text="200sq. ft." />
@@ -73,10 +76,10 @@
                 android:id="@+id/pro_list_status_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="4dp"
                 android:text="@string/status_hint"
-                android:textSize="14dp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head" />
 
@@ -84,10 +87,10 @@
                 android:id="@+id/pro_list_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:layout_marginStart="2dp"
-                android:textSize="14dp"
                 android:maxLines="1"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_status_head"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head"
                 tools:text="RTMI" />
@@ -96,12 +99,12 @@
                 android:id="@+id/pro_list_main_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
-                tools:text="@string/developer_head"
-                android:textSize="16dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
-                app:layout_constraintTop_toBottomOf="@id/pro_list_status_head" />
+                app:layout_constraintTop_toBottomOf="@id/pro_list_status_head"
+                tools:text="@string/developer_head" />
 
             <TextView
                 android:id="@+id/pro_list_main"
@@ -109,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
-                android:textSize="16dp"
+                android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_main_head"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_status_head"
                 tools:text="Developer Name" />

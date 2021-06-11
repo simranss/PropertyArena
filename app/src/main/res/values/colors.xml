@@ -18,10 +18,14 @@
     <color name="screen_color">#d0d0e4</color>
     <color name="blue">#0092DD</color>
 
+    <color name="white_00">#00ffffff</color>
     <color name="white_10">#19ffffff</color>
     <color name="white_20">#33ffffff</color>
     <color name="white_30">#4cffffff</color>
     <color name="white_40">#66FFFFFF</color>
     <color name="white_50">#7fFFFFFF</color>
     <color name="white_60">#99ffffff</color>
+    <color name="white_70">#b3ffffff</color>
+    <color name="white_80">#ccffffff</color>
+    <color name="white_90">#e6ffffff</color>
 </resources>
