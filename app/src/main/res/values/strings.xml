@@ -23,7 +23,7 @@
 
     <string name="project_name_hint">Project name</string>
     <string name="developer_name_hint">Developer name</string>
-    <string name="zone_hint">Zone</string>
+    <string name="zone_hint">Zone/Locality</string>
     <string name="config_hint">Configuration</string>
     <string name="carpet_hint">Carpet</string>
     <string name="actual_price_hint">Actual\nPricing</string>

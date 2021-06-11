@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.nishasimran.propertyarena.Values.Values;
 import com.nishasimran.propertyarena.R;
@@ -17,6 +18,8 @@ import static com.nishasimran.propertyarena.Values.Values.CONFIG_TYPES;
 public class ConfigView {
 
     private final EditText configEditText;
+    private final EditText carpetEditText;
+    private final TextView carpetUnit;
     private String configUnit;
     private final View view;
 
@@ -27,8 +30,10 @@ public class ConfigView {
         LayoutInflater inflater = LayoutInflater.from(context);
 
         view = inflater.inflate(R.layout.project_config, null);
-        Spinner configSpinner = view.findViewById(R.id.a_e_config_spinner);
-        configEditText = view.findViewById(R.id.a_e_config);
+        Spinner configSpinner = view.findViewById(R.id.p_c_config_spinner);
+        configEditText = view.findViewById(R.id.p_c_config);
+        carpetEditText = view.findViewById(R.id.p_c_carpet);
+        carpetUnit = view.findViewById(R.id.p_c_carpet_unit);
 
         configSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -50,18 +55,25 @@ public class ConfigView {
     }
 
     public String getConfig() {
-        float value = getEditTextValue();
-        if (value == 0.0f) {
+        Float value = getConfigEditTextValue();
+        if (value == null) {
             return null;
         }
         return (value + getConfigUnit());
     }
 
-    public float getEditTextValue() {
+    public Float getConfigEditTextValue() {
         if (configEditText.getText().toString().trim().isEmpty()) {
-            return 0.0f;
+            return null;
         }
         return Float.parseFloat(configEditText.getText().toString().trim());
+    }
+
+    public Integer getCarpet() {
+        if (carpetEditText.getText().toString().trim().isEmpty()) {
+            return null;
+        }
+        return Integer.parseInt(carpetEditText.getText().toString().trim());
     }
 
     public String getConfigUnit() {
@@ -71,10 +83,22 @@ public class ConfigView {
         return configUnit;
     }
 
-    public void setError() {
+    public void setConfigError() {
         if (configEditText.getError() != null) {
             configEditText.setError(null);
         }
         configEditText.setError(Values.ERROR_REQUIRED);
+    }
+
+    public void setCarpetError() {
+        if (carpetEditText.getError() != null) {
+            carpetEditText.setError(null);
+        }
+        carpetEditText.setError(Values.ERROR_REQUIRED);
+    }
+
+    public void hideCarpet() {
+        carpetEditText.setVisibility(View.GONE);
+        carpetUnit.setVisibility(View.GONE);
     }
 }

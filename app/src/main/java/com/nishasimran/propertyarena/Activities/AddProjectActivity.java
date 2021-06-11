@@ -40,14 +40,15 @@ public class AddProjectActivity extends AppCompatActivity {
     private Button saveButton;
     private ImageView addConfigImageView;
     private LinearLayout configContainer;
-    private EditText projectNameEditText, developerNameEditText, zoneEditText, rateEditText, carpetEditText, possessionDateEditText, statusEditText, paymentPlanEditText, schemeEditText, landParcelEditText, towersEditText, unitsEditText, specsEditText;
+    private EditText projectNameEditText, developerNameEditText, zoneEditText, rateEditText, possessionDateEditText, statusEditText, paymentPlanEditText, schemeEditText, landParcelEditText, towersEditText, unitsEditText, specsEditText;
 
     // values
     private String projectName, developerName, launchType, zone, status, paymentPlan, scheme, sector, specs;
     private float rate = 0.0f, landParcel = 0.0f;
     private final ArrayList<String> config = new ArrayList<>();
+    private final ArrayList<Integer> carpet = new ArrayList<>();
     private long possessionDate = 0L;
-    private int towers = 0, carpet = 0, units = 0;
+    private int towers = 0, units = 0;
 
     private final ArrayList<ConfigView> configViews = new ArrayList<>();
 
@@ -115,7 +116,6 @@ public class AddProjectActivity extends AppCompatActivity {
                 developerName = developerNameEditText.getText().toString().trim();
                 zone = zoneEditText.getText().toString().trim();
                 rate = Float.parseFloat(rateEditText.getText().toString().trim());
-                carpet = Integer.parseInt(carpetEditText.getText().toString().trim());
                 paymentPlan = paymentPlanEditText.getText().toString().trim();
                 scheme = schemeEditText.getText().toString().trim();
                 landParcel = Float.parseFloat(landParcelEditText.getText().toString().trim());
@@ -123,7 +123,7 @@ public class AddProjectActivity extends AppCompatActivity {
                 units = Integer.parseInt(unitsEditText.getText().toString().trim());
                 specs = specsEditText.getText().toString().trim();
 
-                Project project = new Project(projectName, developerName, zone, config.toString(), carpet, rate, possessionDate, status, paymentPlan, scheme, sector, launchType, landParcel, towers, units, specs);
+                Project project = new Project(projectName, developerName, zone, config.toString(), carpet.toString(), rate, possessionDate, status, paymentPlan, scheme, sector, launchType, landParcel, towers, units, specs);
 
                 ProjectViewModel.getInstance(this, getApplication()).insert(project);
 
@@ -160,24 +160,34 @@ public class AddProjectActivity extends AppCompatActivity {
             rateEditText.setError(Values.ERROR_REQUIRED);
             return false;
         }
-        if (isEditTextEmpty(carpetEditText)) {
-            carpetEditText.setError(Values.ERROR_REQUIRED);
-            return false;
-        }
         for (int i = 0; i < configContainer.getChildCount(); i++) {
             String configValue = configViews.get(i).getConfig();
-            if (configValue != null) {
+            Integer carpetValue = configViews.get(i).getCarpet();
+            if (configValue != null && carpetValue != null) {
                 config.add(configValue);
-            } else {
+                carpet.add(carpetValue);
+            } else if (configValue == null && carpetValue == null) {
                 if (i != 0) {
                     configContainer.removeViewAt(i);
                     configViews.remove(i);
                     i--;
                 }
+            } else if (carpetValue != null) {
+                configViews.get(i).setConfigError();
+                config.clear();
+                carpet.clear();
+                return false;
+            } else {
+                configViews.get(i).setCarpetError();
+                config.clear();
+                carpet.clear();
+                return false;
             }
         }
         if (config.isEmpty()) {
-            configViews.get(0).setError();
+            return false;
+        }
+        if (carpet.isEmpty()) {
             return false;
         }
         if (possessionDateEditText.getError() != null)
@@ -247,7 +257,6 @@ public class AddProjectActivity extends AppCompatActivity {
         launchRadioGroup = findViewById(R.id.a_p_launch_radio_grp);
         zoneEditText = findViewById(R.id.a_p_zone);
         rateEditText = findViewById(R.id.a_p_rate);
-        carpetEditText = findViewById(R.id.a_p_carpet);
         configContainer = findViewById(R.id.a_p_conf_container);
         addConfigImageView = findViewById(R.id.a_p_add_conf);
         possessionDateEditText = findViewById(R.id.a_p_possession);

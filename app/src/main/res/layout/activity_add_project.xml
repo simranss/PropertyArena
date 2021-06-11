@@ -31,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/screen_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,365 +40,570 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white_20"
             android:paddingVertical="16dp">
 
-            <EditText
-                android:id="@+id/a_p_project_name"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:autofillHints="@string/project_name_hint"
-                android:hint="@string/project_name_hint"
-                android:inputType="textCapWords"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <EditText
-                android:id="@+id/a_p_developer_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/developer_name_hint"
-                android:hint="@string/developer_name_hint"
-                android:inputType="textCapWords|textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_project_name" />
-
-            <TextView
-                android:id="@+id/a_p_launch_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/launch_type_hint"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_developer_name" />
-
-            <RadioGroup
-                android:id="@+id/a_p_launch_radio_grp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical"
-                android:weightSum="2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_launch_head">
-
-                <RadioButton
-                    android:id="@+id/a_p_launch_prelaunch"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/launch_prelaunch"
-                    android:text="@string/launch_prelaunch" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-                <RadioButton
-                    android:id="@+id/a_p_launch_launch"
-                    android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/a_p_project_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints="@string/project_name_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/project_name_hint"
+                        android:inputType="textCapWords"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/a_p_developer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/developer_name_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/developer_name_hint"
+                        android:inputType="textCapWords|textPersonName"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_project_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_p_card1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/launch_launch"
-                    android:text="@string/launch_launch" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-                <RadioButton
-                    android:id="@+id/a_p_launch_relaunch"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/a_p_launch_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/launch_type_hint"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/a_p_launch_radio_grp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:weightSum="2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_launch_head">
+
+                        <RadioButton
+                            android:id="@+id/a_p_launch_prelaunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/launch_prelaunch"
+                            android:text="@string/launch_prelaunch" />
+
+                        <RadioButton
+                            android:id="@+id/a_p_launch_launch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/launch_launch"
+                            android:text="@string/launch_launch" />
+
+                        <RadioButton
+                            android:id="@+id/a_p_launch_relaunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/launch_relaunch"
+                            android:text="@string/launch_relaunch" />
+
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_p_card2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/launch_relaunch"
-                    android:text="@string/launch_relaunch" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-            </RadioGroup>
+                    <EditText
+                        android:id="@+id/a_p_zone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints="@string/zone_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/zone_hint"
+                        android:inputType="textCapWords"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/a_p_zone"
+                    <EditText
+                        android:id="@+id/a_p_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/rate_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/rate_hint"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="0.4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_zone" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/zone_hint"
-                android:hint="@string/zone_hint"
-                android:inputType="textCapWords"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_launch_radio_grp" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_card3">
 
-            <EditText
-                android:id="@+id/a_p_rate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/rate_hint"
-                android:hint="@string/rate_hint"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_weight="0.4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_zone" />
-
-            <EditText
-                android:id="@+id/a_p_carpet"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:autofillHints="@string/carpet_hint"
-                android:hint="@string/carpet_hint"
-                android:inputType="number"
-                app:layout_constraintEnd_toStartOf="@id/a_p_carpet_unit"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_rate" />
-
-            <TextView
-                android:id="@+id/a_p_carpet_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="@string/carpet_unit"
-                android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/a_p_carpet"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <LinearLayout
-                android:id="@+id/a_p_conf_container"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/rounded_border"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/a_p_add_conf"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_carpet" />
-
-            <ImageView
-                android:id="@+id/a_p_add_conf"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:contentDescription="@string/add_conf_desc"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:src="@drawable/add"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/a_p_conf_container"
-                app:layout_constraintTop_toBottomOf="@id/a_p_carpet"
-                app:tint="@color/grey" />
-
-            <EditText
-                android:id="@+id/a_p_possession"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/possession_hint"
-                android:focusable="false"
-                android:hint="@string/possession_hint"
-                android:inputType="date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_conf_container" />
-
-            <TextView
-                android:id="@+id/a_p_status_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/status_hint"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_possession" />
-
-            <RadioGroup
-                android:id="@+id/a_p_status_radio_grp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_status_head">
-
-                <RadioButton
-                    android:id="@+id/a_p_status_completed"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/status_completed"
-                    android:text="@string/status_completed" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-                <RadioButton
-                    android:id="@+id/a_p_status_in_progress"
-                    android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/a_p_conf_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/rounded_corner"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/a_p_add_conf"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/a_p_add_conf"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:clickable="true"
+                        android:contentDescription="@string/add_conf_desc"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:src="@drawable/add"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/a_p_conf_container"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/grey" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_p_card4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/status_in_progress"
-                    android:text="@string/status_in_progress" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-            </RadioGroup>
+                    <EditText
+                        android:id="@+id/a_p_possession"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints="@string/possession_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:focusable="false"
+                        android:hint="@string/possession_hint"
+                        android:inputType="date"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/a_p_status"
+                    <TextView
+                        android:id="@+id/a_p_status_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/status_hint"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_possession" />
+
+                    <RadioGroup
+                        android:id="@+id/a_p_status_radio_grp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_status_head">
+
+                        <RadioButton
+                            android:id="@+id/a_p_status_completed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/status_completed"
+                            android:text="@string/status_completed" />
+
+                        <RadioButton
+                            android:id="@+id/a_p_status_in_progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/status_in_progress"
+                            android:text="@string/status_in_progress" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/a_p_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:autofillHints="@string/status_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/status_hint"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_status_radio_grp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:autofillHints="@string/status_hint"
-                android:hint="@string/status_hint"
-                android:inputType="textCapSentences"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_status_radio_grp" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_card5">
 
-            <EditText
-                android:id="@+id/a_p_payment_plan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/payment_plan_hint"
-                android:hint="@string/payment_plan_hint"
-                android:inputType="textCapSentences"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_status" />
-
-            <EditText
-                android:id="@+id/a_p_scheme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/scheme_hint"
-                android:hint="@string/scheme_hint"
-                android:inputType="textCapSentences"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_payment_plan" />
-
-            <TextView
-                android:id="@+id/a_p_sector_head"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/sector_hint"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_scheme" />
-
-            <RadioGroup
-                android:id="@+id/a_p_sector_radio_grp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical"
-                android:weightSum="2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_sector_head">
-
-                <RadioButton
-                    android:id="@+id/a_p_sector_residential"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/sector_residential"
-                    android:text="@string/sector_residential" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-                <RadioButton
-                    android:id="@+id/a_p_sector_commercial"
-                    android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/a_p_payment_plan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:autofillHints="@string/payment_plan_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/payment_plan_hint"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/a_p_scheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/scheme_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/scheme_hint"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_payment_plan" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_p_card6">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/sector_commercial"
-                    android:text="@string/sector_commercial" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-                <RadioButton
-                    android:id="@+id/a_p_sector_offices"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/a_p_sector_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/sector_hint"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RadioGroup
+                        android:id="@+id/a_p_sector_radio_grp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:weightSum="2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_sector_head">
+
+                        <RadioButton
+                            android:id="@+id/a_p_sector_residential"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/sector_residential"
+                            android:text="@string/sector_residential" />
+
+                        <RadioButton
+                            android:id="@+id/a_p_sector_commercial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/sector_commercial"
+                            android:text="@string/sector_commercial" />
+
+                        <RadioButton
+                            android:id="@+id/a_p_sector_offices"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:tag="@string/sector_offices"
+                            android:text="@string/sector_offices" />
+
+                    </RadioGroup>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/a_p_card8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/white_10"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/a_p_card7">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:tag="@string/sector_offices"
-                    android:text="@string/sector_offices" />
+                    android:background="@drawable/rounded_corner"
+                    android:backgroundTint="@color/white_50"
+                    android:paddingHorizontal="4dp"
+                    android:paddingBottom="12dp">
 
-            </RadioGroup>
+                    <TextView
+                        android:id="@+id/a_p_land_parcel_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/land_parcel_unit"
+                        android:textSize="18sp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/a_p_land_parcel"
+                        app:layout_constraintEnd_toEndOf="parent" />
 
-            <TextView
-                android:id="@+id/a_p_land_parcel_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="@string/land_parcel_unit"
-                android:textSize="18sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/a_p_land_parcel"
-                app:layout_constraintEnd_toEndOf="parent" />
+                    <EditText
+                        android:id="@+id/a_p_land_parcel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="4dp"
+                        android:autofillHints="@string/land_parcel_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/land_parcel_hint"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toStartOf="@id/a_p_land_parcel_unit"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/a_p_land_parcel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:autofillHints="@string/land_parcel_hint"
-                android:hint="@string/land_parcel_hint"
-                android:inputType="numberDecimal"
-                app:layout_constraintEnd_toStartOf="@id/a_p_land_parcel_unit"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_sector_radio_grp" />
+                    <EditText
+                        android:id="@+id/a_p_towers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/towers_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/towers_hint"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_land_parcel" />
 
-            <EditText
-                android:id="@+id/a_p_towers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/towers_hint"
-                android:hint="@string/towers_hint"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_land_parcel" />
+                    <EditText
+                        android:id="@+id/a_p_units"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/units_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/units_hint"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_towers" />
 
-            <EditText
-                android:id="@+id/a_p_units"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/units_hint"
-                android:hint="@string/units_hint"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_towers" />
+                    <EditText
+                        android:id="@+id/a_p_specs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:autofillHints="@string/specs_hint"
+                        android:background="@drawable/edit_text_background"
+                        android:hint="@string/specs_hint"
+                        android:inputType="textCapSentences"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/a_p_units" />
 
-            <EditText
-                android:id="@+id/a_p_specs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:autofillHints="@string/specs_hint"
-                android:hint="@string/specs_hint"
-                android:inputType="textCapSentences"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_units" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/a_p_save"
@@ -406,9 +612,11 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/save"
+                android:textSize="16sp"
+                android:paddingVertical="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/a_p_specs" />
+                app:layout_constraintTop_toBottomOf="@id/a_p_card8" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
