@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
-import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,11 +22,11 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.customClasses.ConfigView;
 import com.nishasimran.propertyarena.Database.Project;
 import com.nishasimran.propertyarena.Database.ProjectViewModel;
+import com.nishasimran.propertyarena.Utils.Utils;
 import com.nishasimran.propertyarena.Values.Values;
 import com.nishasimran.propertyarena.R;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class AddProjectActivity extends AppCompatActivity {
 
@@ -95,9 +94,9 @@ public class AddProjectActivity extends AppCompatActivity {
                         myCalendar.set(Calendar.YEAR, year1);
                         myCalendar.set(Calendar.MONTH, monthOfYear);
                         myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        SimpleDateFormat df = new SimpleDateFormat("MMM yyyy", Locale.getDefault());
                         possessionDate = myCalendar.getTimeInMillis();
-                        possessionDateEditText.setText(df.format(myCalendar.getTime()));
+                        String formattedDate = Utils.getFormattedDate(myCalendar.getTimeInMillis());
+                        possessionDateEditText.setText(formattedDate);
                     }, year, month, day);
             datePicker.show();
         });
