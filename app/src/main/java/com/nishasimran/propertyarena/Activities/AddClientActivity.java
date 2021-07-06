@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.nishasimran.propertyarena.CustomView.ConfigView;
+import com.nishasimran.propertyarena.customClasses.ConfigView;
 import com.nishasimran.propertyarena.Database.Client;
 import com.nishasimran.propertyarena.Database.ClientViewModel;
 import com.nishasimran.propertyarena.Values.Values;

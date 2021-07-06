@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.nishasimran.propertyarena.CustomView.ConfigView;
+import com.nishasimran.propertyarena.customClasses.ConfigView;
 import com.nishasimran.propertyarena.Database.Project;
 import com.nishasimran.propertyarena.Database.ProjectViewModel;
 import com.nishasimran.propertyarena.Values.Values;
@@ -132,6 +132,7 @@ public class AddProjectActivity extends AppCompatActivity {
 
                 ProjectViewModel.getInstance(this, getApplication()).insert(project);
 
+                Toast.makeText(AddProjectActivity.this, "Saved", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
                 Toast.makeText(AddProjectActivity.this, "Please fill all the details", Toast.LENGTH_SHORT).show();

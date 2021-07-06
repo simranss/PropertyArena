@@ -1,4 +1,4 @@
-package com.nishasimran.propertyarena.CustomView;
+package com.nishasimran.propertyarena.customClasses;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
