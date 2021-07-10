@@ -38,8 +38,8 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
     @Override
     public void onBindViewHolder(@NonNull ZoneViewHolder holder, int position) {
         holder.projectTextView.setText(projects.get(position).getProjectName());
-        String carpet = projects.get(position).getCarpet() + " sq. ft.";
-        holder.carpetTextView.setText(carpet);
+        String rate = "₹" + projects.get(position).getRate();
+        holder.rateTextView.setText(rate);
         holder.statusTextView.setText(projects.get(position).getStatus());
         holder.mainHeadTextView.setText(R.string.zone_head);
         holder.mainTextView.setText(projects.get(position).getZone());
@@ -53,7 +53,7 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
     static class ZoneViewHolder extends RecyclerView.ViewHolder {
 
         MaterialCardView parent;
-        TextView mainTextView, projectTextView, statusTextView, carpetTextView, mainHeadTextView;
+        TextView mainTextView, projectTextView, statusTextView, rateTextView, mainHeadTextView;
 
         public ZoneViewHolder(Context context, ZoneAdapter adapter, @NonNull View itemView) {
             super(itemView);
@@ -62,7 +62,7 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
             mainHeadTextView = itemView.findViewById(R.id.pro_list_main_head);
             projectTextView = itemView.findViewById(R.id.pro_list_project_name);
             statusTextView = itemView.findViewById(R.id.pro_list_status);
-            carpetTextView = itemView.findViewById(R.id.pro_list_carpet);
+            rateTextView = itemView.findViewById(R.id.pro_list_rate);
 
             parent.setOnClickListener(v -> {
                 Intent intent = new Intent(context, ProjectDetailsActivity.class);

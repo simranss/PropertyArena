@@ -51,26 +51,26 @@
                 tools:text="Project Name" />
 
             <TextView
-                android:id="@+id/pro_list_carpet_head"
+                android:id="@+id/pro_list_rate_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
-                android:text="@string/carpet_head"
+                android:text="@string/rate_head"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_project_name" />
 
             <TextView
-                android:id="@+id/pro_list_carpet"
+                android:id="@+id/pro_list_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@id/pro_list_carpet_head"
+                app:layout_constraintStart_toEndOf="@id/pro_list_rate_head"
                 app:layout_constraintTop_toBottomOf="@id/pro_list_project_name"
-                tools:text="200sq. ft." />
+                tools:text="₹4000" />
 
             <TextView
                 android:id="@+id/pro_list_status_head"
@@ -81,7 +81,7 @@
                 android:text="@string/status_hint"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_img"
-                app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head" />
+                app:layout_constraintTop_toBottomOf="@id/pro_list_rate_head" />
 
             <TextView
                 android:id="@+id/pro_list_status"
@@ -92,7 +92,7 @@
                 android:maxLines="1"
                 android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@id/pro_list_status_head"
-                app:layout_constraintTop_toBottomOf="@id/pro_list_carpet_head"
+                app:layout_constraintTop_toBottomOf="@id/pro_list_rate_head"
                 tools:text="RTMI" />
 
             <TextView

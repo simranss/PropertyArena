@@ -39,8 +39,8 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
     @Override
     public void onBindViewHolder(@NonNull DeveloperViewHolder holder, int position) {
         holder.projectTextView.setText(projects.get(position).getProjectName());
-        String carpet = projects.get(position).getCarpet() + " sq. ft.";
-        holder.carpetTextView.setText(carpet);
+        String rate = "₹" + projects.get(position).getRate();
+        holder.rateTextView.setText(rate);
         holder.statusTextView.setText(projects.get(position).getStatus());
         holder.mainHeadTextView.setText(R.string.developer_head);
         holder.mainTextView.setText(projects.get(position).getDeveloperName());
@@ -54,7 +54,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
     static class DeveloperViewHolder extends RecyclerView.ViewHolder {
 
         MaterialCardView parent;
-        TextView mainTextView, projectTextView, statusTextView, carpetTextView, mainHeadTextView;
+        TextView mainTextView, projectTextView, statusTextView, rateTextView, mainHeadTextView;
 
         public DeveloperViewHolder(Context context, DeveloperAdapter adapter, @NonNull View itemView) {
             super(itemView);
@@ -63,7 +63,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.Deve
             mainHeadTextView = itemView.findViewById(R.id.pro_list_main_head);
             projectTextView = itemView.findViewById(R.id.pro_list_project_name);
             statusTextView = itemView.findViewById(R.id.pro_list_status);
-            carpetTextView = itemView.findViewById(R.id.pro_list_carpet);
+            rateTextView = itemView.findViewById(R.id.pro_list_rate);
 
             parent.setOnClickListener(v -> {
                 Intent intent = new Intent(context, ProjectDetailsActivity.class);
