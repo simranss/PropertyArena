@@ -44,7 +44,7 @@ public class ProjectViewModel extends AndroidViewModel {
 
     public void deleteAll() { repository.deleteAll(); }
 
-    public Project findProject(int projectId) {
-        return repository.findProject(projectId, allProjects.getValue());
+    public Project findProject(int projectId, List<Project> projects) {
+        return repository.findProject(projectId, projects);
     }
 }
