@@ -70,9 +70,15 @@
     <string name="save">Save</string>
 
     <string name="developer_head">Developer:</string>
-    <string name="zone_head">Zone:</string>
-    <string name="carpet_head">Carpet:</string>
+    <string name="zone_head">Zone/Locality:</string>
+    <string name="carpet_head">Carpet\n(sq. ft.)</string>
+    <string name="sector_head">Sector:</string>
+    <string name="rate_head">Rate:</string>
     <string name="possession_head">Possession Date:</string>
     <string name="launch_head">Launch Type:</string>
     <string name="payment_plan_head">Payment plan:</string>
+    <string name="scheme_head">Schemes:</string>
+    <string name="specs_head">Specification:</string>
+
+    <string name="no_project_str">Unfortunately no project found.</string>
 </resources>
