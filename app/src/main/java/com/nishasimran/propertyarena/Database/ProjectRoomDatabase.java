@@ -48,8 +48,8 @@ public abstract class ProjectRoomDatabase extends RoomDatabase {
             databaseWriteExecutor.execute(() -> {
                 // Populate the database in the background.
                 // If you want to start with more words, just add them.
-                ProjectDAO dao = INSTANCE.projectDAO();
-                ClientDAO keyDao = INSTANCE.clientDAO();
+                ProjectDAO projectDao = INSTANCE.projectDAO();
+                ClientDAO clientDao = INSTANCE.clientDAO();
             });
         }
     };

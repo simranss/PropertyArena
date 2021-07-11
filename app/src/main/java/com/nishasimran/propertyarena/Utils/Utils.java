@@ -20,7 +20,7 @@ public class Utils {
 
         int [] array = new int[stringArray.length];
         for (int i = 0; i < stringArray.length; i++) {
-            array[i] = Integer.parseInt(stringArray[i]);
+            array[i] = Integer.parseInt(stringArray[i].trim());
         }
         return array;
     }
