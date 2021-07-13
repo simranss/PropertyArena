@@ -27,7 +27,6 @@ import com.nishasimran.propertyarena.Utils.Utils;
 import com.nishasimran.propertyarena.Values.Values;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ProjectDetailsActivity extends AppCompatActivity {
 
@@ -36,8 +35,6 @@ public class ProjectDetailsActivity extends AppCompatActivity {
 
     private int projectId;
     private Project project;
-
-    private List<Project> projects;
 
     private TextView developerTextView, zoneTextView, launchTextView, possessionDateTextView, statusTextView, sectorTextView, landParcelTextView, towersTextView, unitsTextView, paymentTextView, schemeTextView, specsTextView;
     private TableLayout tableLayout;
@@ -76,7 +73,7 @@ public class ProjectDetailsActivity extends AppCompatActivity {
 
     private void initProjectListener() {
         ProjectViewModel.getInstance(this, getApplication()).getAllProjects().observe(this, projects1 -> {
-            projects = projects1;
+            Log.d(TAG, "projects: " + projects1);
             project = ProjectViewModel.getInstance(this, getApplication()).findProject(projectId, projects1);
             if (project != null) {
                 if (getSupportActionBar() != null)
@@ -194,8 +191,8 @@ public class ProjectDetailsActivity extends AppCompatActivity {
                 String taxPrice;
                 if ((carpet.length - 1) >= i) {
                     // TODO: calculate the taxPrice according to the rate and the tax
-                    taxPrice = (carpet[i] * project1.getRate()) + "L";
-                    taxPriceTextView1.setText("-");
+                    taxPrice = ((carpet[i] * project1.getRate() * (Utils.getStampDutyTax(getApplication()) + Utils.getGstTax(getApplication()))) + Utils.getRegFee(getApplication())) + "L";
+                    taxPriceTextView1.setText(taxPrice);
                 } else
                     taxPriceTextView1.setText("-");
 

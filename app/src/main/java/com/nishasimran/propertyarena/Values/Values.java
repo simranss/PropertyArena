@@ -52,4 +52,9 @@ public class Values {
     public final static String MESSAGE_INVALID_EMAIL = "Please enter a valid email";
 
     public final static String KEY_PROJECT_ID = "projectId";
+
+    public final static String SHARED_PREFERENCES = "My_prefs";
+    public final static String SHARED_PREFS_STAMP_DUTY = "shared_pref_stamp_duty";
+    public final static String SHARED_PREFS_GST = "shared_pref_gst";
+    public final static String SHARED_PREFS_REGISTRATION_FEE = "shared_pref_ref_fee";
 }
