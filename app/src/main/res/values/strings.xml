@@ -20,6 +20,7 @@
     <string name="add_client_desc">Add client</string>
     <string name="add_conf_desc">Add another configuration</string>
     <string name="project_img_desc">Project image</string>
+    <string name="logo_desc">App logo</string>
 
     <string name="project_name_hint">Project name</string>
     <string name="developer_name_hint">Developer name</string>
