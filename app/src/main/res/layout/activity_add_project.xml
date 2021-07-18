@@ -541,7 +541,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
-                        android:layout_marginEnd="4dp"
+                        android:layout_marginEnd="8dp"
                         android:autofillHints="@string/land_parcel_hint"
                         android:background="@drawable/edit_text_background"
                         android:hint="@string/land_parcel_hint"
