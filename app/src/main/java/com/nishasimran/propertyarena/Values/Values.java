@@ -46,6 +46,7 @@ public class Values {
     public final static String ERROR_REQUIRED = "Required";
     public final static String ERROR_PHONE = "Invalid phone no.";
     public final static String ERROR_EMAIL = "Invalid email";
+    public final static String ERROR_OTP = "Invalid otp";
 
     public final static String MESSAGE_FILL_ALL = "Please fill all the details";
     public final static String MESSAGE_INVALID_PHONE = "Please enter a valid phone no.";
@@ -57,4 +58,9 @@ public class Values {
     public final static String SHARED_PREFS_STAMP_DUTY = "shared_pref_stamp_duty";
     public final static String SHARED_PREFS_GST = "shared_pref_gst";
     public final static String SHARED_PREFS_REGISTRATION_FEE = "shared_pref_ref_fee";
+    public final static String SHARED_PREFS_PHONE = "shared_pref_phone";
+    public final static String SHARED_PREFS_UID = "shared_pref_uid";
+
+    public final static int PHONE_LENGTH = 10;
+    public final static int OTP_LENGTH = 6;
 }

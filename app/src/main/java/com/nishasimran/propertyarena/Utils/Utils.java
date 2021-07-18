@@ -68,4 +68,14 @@ public class Utils {
         SharedPreferences.Editor editor = application.getSharedPreferences(Values.SHARED_PREFERENCES, Context.MODE_PRIVATE).edit();
         editor.putInt(Values.SHARED_PREFS_REGISTRATION_FEE, value).apply();
     }
+
+    public static void setPhoneNo(Application application, String phone) {
+        SharedPreferences.Editor editor = application.getSharedPreferences(Values.SHARED_PREFERENCES, Context.MODE_PRIVATE).edit();
+        editor.putString(Values.SHARED_PREFS_PHONE, phone).apply();
+    }
+
+    public static void setUid(Application application, String uid) {
+        SharedPreferences.Editor editor = application.getSharedPreferences(Values.SHARED_PREFERENCES, Context.MODE_PRIVATE).edit();
+        editor.putString(Values.SHARED_PREFS_UID, uid).apply();
+    }
 }

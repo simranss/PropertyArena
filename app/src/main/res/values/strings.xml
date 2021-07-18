@@ -53,6 +53,7 @@
     <string name="req_status_hint">Required Status</string>
     <string name="req_specs_hint">Required Specifications</string>
     <string name="remarks_hint">Remarks</string>
+    <string name="otp_hint">OTP</string>
 
     <string name="carpet_unit">sq. ft.</string>
     <string name="land_parcel_unit">acres</string>
@@ -69,6 +70,7 @@
     <string name="launch_relaunch">Relaunch</string>
 
     <string name="save">Save</string>
+    <string name="submit">Submit</string>
 
     <string name="developer_head">Developer:</string>
     <string name="zone_head">Zone/Locality:</string>
