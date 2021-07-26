@@ -5,10 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.SectorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sector_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="4dp"
+        android:background="@color/white_40"
+        tools:listitem="@layout/project_list_item" />
 
 </FrameLayout>

@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         // fragments
         developerFragment = new DeveloperFragment(this);
         zoneFragment = new ZoneFragment(this);
-        sectorFragment = new SectorFragment();
+        sectorFragment = new SectorFragment(this);
         clientsFragment = new ClientsFragment(this);
 
         // by default load the splash fragment
