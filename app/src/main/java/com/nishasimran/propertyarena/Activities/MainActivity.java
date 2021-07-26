@@ -27,7 +27,6 @@ import com.google.android.material.navigation.NavigationView;
 import com.nishasimran.propertyarena.Fragments.ClientsFragment;
 import com.nishasimran.propertyarena.Fragments.DeveloperFragment;
 import com.nishasimran.propertyarena.Fragments.SectorFragment;
-import com.nishasimran.propertyarena.Fragments.SplashFragment;
 import com.nishasimran.propertyarena.Fragments.ZoneFragment;
 import com.nishasimran.propertyarena.R;
 
@@ -43,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Animation fabOpen, fabClose, fabRClockwise, fabRAnticlockwise;
 
     // fragments
-    private Fragment developerFragment;
-    private Fragment zoneFragment;
-    private final Fragment sectorFragment = new SectorFragment();
-    private Fragment clientsFragment;
-    private final Fragment splashFragment = new SplashFragment();
+    private Fragment developerFragment, zoneFragment, sectorFragment, clientsFragment;
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -69,11 +64,12 @@ public class MainActivity extends AppCompatActivity {
         // fragments
         developerFragment = new DeveloperFragment(this);
         zoneFragment = new ZoneFragment(this);
+        sectorFragment = new SectorFragment();
         clientsFragment = new ClientsFragment(this);
 
         // by default load the splash fragment
         if (savedInstanceState == null) {
-            loadFragment(splashFragment);
+            loadFragment(developerFragment);
         }
 
         fabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
@@ -147,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 default:
                     Log.d(TAG, "default selected");
-                    loadFragment(splashFragment);
+                    loadFragment(developerFragment);
             }
 
             drawerLayout.closeDrawer(GravityCompat.START);
