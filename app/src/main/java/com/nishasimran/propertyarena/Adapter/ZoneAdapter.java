@@ -41,7 +41,6 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
         String rate = "₹" + projects.get(position).getRate();
         holder.rateTextView.setText(rate);
         holder.statusTextView.setText(projects.get(position).getStatus());
-        holder.mainHeadTextView.setText(R.string.zone_head);
         holder.mainTextView.setText(projects.get(position).getZone());
     }
 
@@ -63,6 +62,8 @@ public class ZoneAdapter extends RecyclerView.Adapter<ZoneAdapter.ZoneViewHolder
             projectTextView = itemView.findViewById(R.id.pro_list_project_name);
             statusTextView = itemView.findViewById(R.id.pro_list_status);
             rateTextView = itemView.findViewById(R.id.pro_list_rate);
+
+            mainHeadTextView.setText(R.string.zone_head);
 
             parent.setOnClickListener(v -> {
                 Intent intent = new Intent(context, ProjectDetailsActivity.class);
