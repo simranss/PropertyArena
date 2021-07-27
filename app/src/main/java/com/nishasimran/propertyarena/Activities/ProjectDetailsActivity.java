@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.Database.Project;
@@ -55,6 +56,7 @@ public class ProjectDetailsActivity extends AppCompatActivity {
         projectId = getIntent().getIntExtra(Values.KEY_PROJECT_ID, DEFAULT_PROJECT_ID);
         if (projectId == DEFAULT_PROJECT_ID) {
             finish();
+            Toast.makeText(this, getString(R.string.no_project_str), Toast.LENGTH_SHORT).show();
         }
 
         initViews();

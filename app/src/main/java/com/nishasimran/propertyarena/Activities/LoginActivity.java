@@ -137,8 +137,8 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCodeSent(@NonNull @NotNull String s, @NonNull @NotNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                super.onCodeSent(s, forceResendingToken);
+            public void onCodeSent(@NonNull @NotNull String verificationId, @NonNull @NotNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(verificationId, forceResendingToken);
 
                 codeSent = true;
                 disableView(phoneEditText);
@@ -176,6 +176,7 @@ public class LoginActivity extends AppCompatActivity {
                         Utils.setPhoneNo(getApplication(), phone);
                         Utils.setUid(getApplication(), uid);
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
                     } else {
                         Log.w(TAG, "signInWithPhoneAuthCredential", new NullPointerException("User is null"));
                     }

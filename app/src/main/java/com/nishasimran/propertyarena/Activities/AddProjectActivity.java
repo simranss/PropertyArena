@@ -58,6 +58,8 @@ public class AddProjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_project);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        if (!toolbar.isTitleCentered())
+            toolbar.setTitleCentered(true);
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
