@@ -9,6 +9,12 @@
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.PropertyArena">
+        <activity android:name=".Activities.ProjectEditActivity"
+            android:parentActivityName=".Activities.AddProjectActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.AddProjectActivity" />
+        </activity>
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.SplashActivity">
             <intent-filter>
