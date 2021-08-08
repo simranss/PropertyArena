@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
@@ -239,7 +240,9 @@ public class ProjectDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menu_edit) {
-            // TODO: start editing current Project
+            Intent intent = new Intent(this, ProjectEditActivity.class);
+            intent.putExtra(Values.KEY_PROJECT_ID, projectId);
+            startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.menu_delete) {
             if (project != null) {

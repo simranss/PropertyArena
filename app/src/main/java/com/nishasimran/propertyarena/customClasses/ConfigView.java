@@ -20,6 +20,7 @@ public class ConfigView {
     private final EditText configEditText;
     private final EditText carpetEditText;
     private final TextView carpetUnit;
+    private Spinner configSpinner;
     private String configUnit;
     private final View view;
 
@@ -30,7 +31,7 @@ public class ConfigView {
         LayoutInflater inflater = LayoutInflater.from(context);
 
         view = inflater.inflate(R.layout.project_config, null);
-        Spinner configSpinner = view.findViewById(R.id.p_c_config_spinner);
+        configSpinner = view.findViewById(R.id.p_c_config_spinner);
         configEditText = view.findViewById(R.id.p_c_config);
         carpetEditText = view.findViewById(R.id.p_c_carpet);
         carpetUnit = view.findViewById(R.id.p_c_carpet_unit);
@@ -100,5 +101,20 @@ public class ConfigView {
     public void hideCarpet() {
         carpetEditText.setVisibility(View.GONE);
         carpetUnit.setVisibility(View.GONE);
+    }
+
+    public void setConfig(String config) {
+        if (config.toLowerCase().endsWith("hk")) {
+            config = config.split("B")[0];
+            configSpinner.setSelection(0);
+        } else {
+            config = config.split("R")[0];
+            configSpinner.setSelection(1);
+        }
+        configEditText.setText(config);
+    }
+
+    public void setCarpet(int carpet) {
+        carpetEditText.setText(String.valueOf(carpet));
     }
 }

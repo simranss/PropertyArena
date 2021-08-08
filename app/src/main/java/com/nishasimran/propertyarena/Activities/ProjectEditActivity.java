@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,11 +17,14 @@ import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.nishasimran.propertyarena.Database.Project;
+import com.nishasimran.propertyarena.Database.ProjectViewModel;
 import com.nishasimran.propertyarena.R;
+import com.nishasimran.propertyarena.Utils.Utils;
 import com.nishasimran.propertyarena.Values.Values;
 import com.nishasimran.propertyarena.customClasses.ConfigView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ProjectEditActivity extends AppCompatActivity {
 
@@ -44,16 +48,16 @@ public class ProjectEditActivity extends AppCompatActivity {
     // values
     private String projectName, developerName, launchType, zone, status, paymentPlan, scheme, sector, specs;
     private Float rate, landParcel;
-    private final ArrayList<String> config = new ArrayList<>();
-    private final ArrayList<Integer> carpet = new ArrayList<>();
+    private String[] config;
+    private int[] carpet;
     private Long possessionDate;
     private Integer towers, units;
 
     // new values
     private String newProjectName, newDeveloperName, newLaunchType, newZone, newStatus, newPaymentPlan, newScheme, newSector, newSpecs;
     private Float newRate, newLandParcel;
-    private final ArrayList<String> newConfig = new ArrayList<>();
-    private final ArrayList<Integer> newCarpet = new ArrayList<>();
+    private String[] newConfig;
+    private int[] newCarpet;
     private Long newPossessionDate;
     private Integer newTowers, newUnits;
 
@@ -83,7 +87,72 @@ public class ProjectEditActivity extends AppCompatActivity {
     }
 
     private void initProjectListener() {
+        ProjectViewModel.getInstance(this, getApplication()).getAllProjects().observe(this, projects1 -> {
+            Log.d(TAG, "projects: " + projects1);
+            project = ProjectViewModel.getInstance(this, getApplication()).findProject(projectId, projects1);
+            if (project != null) {
+                if (getSupportActionBar() != null)
+                    getSupportActionBar().setTitle(project.getProjectName());
+                updateData(project);
 
+            } else {
+                if (getSupportActionBar() != null)
+                    getSupportActionBar().setTitle("Project Details");
+            }
+        });
+    }
+
+    private void updateData(Project project) {
+        if (project != null) {
+            projectNameEditText.setText(project.getProjectName());
+            developerNameEditText.setText(project.getDeveloperName());
+            zoneEditText.setText(project.getZone());
+            if (project.getLaunchType().toLowerCase().trim().startsWith("launch"))
+                launchRadio.setChecked(true);
+            else if (project.getLaunchType().toLowerCase().trim().startsWith("pre"))
+                preLaunchRadio.setChecked(true);
+            else{
+                relaunchRadio.setChecked(true);
+            }
+            rateEditText.setText(String.valueOf(project.getRate()));
+            String possessionDate = Utils.getFormattedDate(project.getPossessionDate());
+            possessionEditText.setText(possessionDate);
+            if (project.getStatus().trim().toLowerCase().startsWith("rtmi"))
+                rtmiRadio.setChecked(true);
+            else
+                underConstRadio.setChecked(true);
+            if (project.getSector().trim().toLowerCase().startsWith("residential"))
+                residentialRadio.setChecked(true);
+            else if (project.getSector().trim().toLowerCase().startsWith("commercial"))
+                commercialRadio.setChecked(true);
+            else{
+                officesRadio.setChecked(true);
+            }
+            landParcelEditText.setText(String.valueOf(project.getLandParcel()));
+            towersEditText.setText(String.valueOf(project.getTowers()));
+            unitsEditText.setText(String.valueOf(project.getUnits()));
+            paymentEditText.setText(project.getPaymentPlan());
+            schemeEditText.setText(project.getScheme());
+            specsEditText.setText(project.getSpecifications());
+
+            carpet = Utils.intArrayToArray(project.getCarpet());
+            config = Utils.stringArrayToArray(project.getConfig());
+
+            for (String ele : config) {
+                ConfigView configView = new ConfigView(this);
+                configView.setConfig(ele);
+                configViews.add(configView);
+            }
+            for (int i = 0; i <= carpet.length; i++) {
+                if (i < configViews.size()) {
+                    ConfigView configView = configViews.get(i);
+                    configView.setCarpet(carpet[i]);
+                    configContainer.addView(configView.getView());
+                } else {
+                    break;
+                }
+            }
+        }
     }
 
     private void initViews() {
